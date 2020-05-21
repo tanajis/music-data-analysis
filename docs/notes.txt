@@ -31,3 +31,9 @@ music_data_analysis
   -data_lake
     -songs
     -logs
+
+
+
+-----------------------
+# install Dependencies :
+pip install -r requirements.txt

@@ -28,7 +28,7 @@ def process_song_data(spark, input_data, output_data):
     """
 
     # get filepath to song data file
-    song_data = input_data + "song_data/*/*/*/*"
+    song_data = input_data + "songs-data/*/*/*"
 
     # read song data file
     df = spark.read.json(song_data, mode='PERMISSIVE', columnNameOfCorruptRecord='corrupt_record').drop_duplicates()
@@ -56,7 +56,7 @@ def process_log_data(spark, input_data, output_data):
     """
 
     # get filepath to log data file
-    log_data = os.path.join(input_data, "log-data/")
+    log_data = input_data + "log-data/*"
 
     # read log data file
     df = spark.read.json(log_data, mode='PERMISSIVE', columnNameOfCorruptRecord='corrupt_record').drop_duplicates()
@@ -105,11 +105,11 @@ def process_log_data(spark, input_data, output_data):
 
 def main():
     spark = create_spark_session()
-    input_data = "hdfs://localhost:54310/music_data_analysis/data_lake"
+    input_data = "hdfs://localhost:54310/music_data_analysis/data_lake/"
     output_data = "hdfs://localhost:54310/music_data_analysis/output/"
 
     process_song_data(spark, input_data, output_data)
-    process_log_data(spark, input_data, output_data)
+    #process_log_data(spark, input_data, output_data)
 
 
 if __name__ == "__main__":
