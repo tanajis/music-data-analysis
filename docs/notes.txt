@@ -1,3 +1,7 @@
+
+Note :Project is downloaded from : https://github.com/san089/Udacity-Data-Engineering-Projects/tree/master/Data_Lake
+and modified by me.
+
 -----------------------------------------------
 DATA LAKE
 -----------------------------------------------
@@ -45,6 +49,11 @@ pip install -r requirements.txt
 #---------------------------------------------------------
 Data warehouse
 #---------------------------------------------------------
+
+staging
+stg_events
+stg_songs
+
 
 Fact Tables
 -----------------------------------------------
